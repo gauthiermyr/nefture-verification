@@ -44,3 +44,10 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+## Pipeline
+
+ - `main` branch: production sources
+ - `develop` every features must be merged into develop before prod
+ - to create a new feature please use `feature/name-of-feature` and create a PR into `develop` 

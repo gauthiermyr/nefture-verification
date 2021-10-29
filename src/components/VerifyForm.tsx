@@ -2,6 +2,7 @@ import { Button, Input, InputLabel, OutlinedInput } from "@mui/material";
 import { useState } from "react";
 import { tw } from "twind";
 import axios from "redaxios";
+import { AutoSearch } from "./AutoSearch";
 
 
 export function VerifyForm() {
@@ -10,6 +11,10 @@ export function VerifyForm() {
     const handleInputChange = (e: any) => {
         const target = e.target as HTMLInputElement;
         setContractAddress(target.value)
+    }
+
+    const setNewValue = (contract: string) => {
+        setContractAddress(contractAddress);
     }
 
     const handleClick = (e: any) => {
@@ -36,6 +41,7 @@ export function VerifyForm() {
         <div className={tw('h-full grid grid-cols-1 items-center justify-items-center')}>
             <div className={tw('m-auto text-xl')}>Enter a contract address</div>
             <Input onChange={handleInputChange} id='input' className={tw('m-auto')} placeholder="Contract address" />
+            <AutoSearch inputId='input' set={setContractAddress}/>
             <Button onClick={handleClick} className={tw('m-auto')} variant="contained">Verify</Button>
         </div>
     )
